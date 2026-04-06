@@ -68,11 +68,11 @@ public void mouseDragged(MouseEvent e) {
 }
 });
 
-            
-    
 
-            
-        setSize(400,400);
+
+
+
+setSize(400,400);
     }
 
     public void setColor(Color c){

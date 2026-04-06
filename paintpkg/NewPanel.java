@@ -4,8 +4,8 @@ import java.awt.event.*;
 import paintpkg.MyPanel;
 
 public class NewPanel extends MyPanel implements ActionListener{
-    Panel pe,ps; //panel east,panel south;
-    Button bso,bsfo,bsr,bsfr,bsl,bfree; //button shape oval,button shape filloval
+    Panel pe,ps; 
+    Button bso,bsfo,bsr,bsfr,bsl,bfree; 
     Button berase;
     Button bplus, bminus;
 
@@ -17,7 +17,7 @@ public class NewPanel extends MyPanel implements ActionListener{
 
     public NewPanel(){
         super();
-        //EAST PANEL
+        
         pe=new Panel();
         bso=new Button("Oval");
         bsfo=new Button("fill oval");
@@ -30,7 +30,7 @@ bfree = new Button("Free Draw");
 berase = new Button("Eraser");
 
 Panel psize = new Panel();
-psize.setLayout(new GridLayout(1,2,5,5)); // 1 row, 2 columns
+psize.setLayout(new GridLayout(1,2,5,5)); 
 
 bplus = new Button("+");
 bminus = new Button("-");
@@ -60,7 +60,7 @@ pe.add(berase);
 pe.add(psize);
 
 
-        //south panel
+
         ps=new Panel();
         bcBLACK=new Button("BLACK");
         bcBLUE=new Button("BLUE");
@@ -147,12 +147,12 @@ if (b == berase) {
 }
 
 if (b == bplus) {
-    brushSize += 2; // increase size
+    brushSize += 2; 
 }
 
 if (b == bminus) {
     if (brushSize > 2) {
-        brushSize -= 2; // decrease size
+        brushSize -= 2; 
     }
 }
 
@@ -191,8 +191,7 @@ if (b == bminus) {
     }
 }
 
-//set class path for compilation-
-//set CLASSPATH=d:\java26\;
+
 
 
 

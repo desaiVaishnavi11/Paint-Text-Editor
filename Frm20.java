@@ -16,12 +16,11 @@ class Frm20 extends Frame implements ActionListener {
     NewPanel pan;
 
     Frm20() {
-        super("🎨Paint and Text Studio");
+        super("Paint and Text Studio");
 
         pan = new NewPanel();
         t = new TextField();
 
-        // -------- File Menu --------
         f = new Menu("File");
         n = new MenuItem("New");
         s = new MenuItem("Save");
@@ -32,7 +31,7 @@ class Frm20 extends Frame implements ActionListener {
         f.add(n);
         f.add(s);
 
-        // -------- Exit Menu --------
+    
         ex = new Menu("Exit");
         no = new MenuItem("No");
         yes = new MenuItem("Yes");
@@ -43,15 +42,15 @@ class Frm20 extends Frame implements ActionListener {
         ex.add(no);
         ex.add(yes);
 
-        // -------- Mode Menu --------
+    
         mo = new Menu("Mode");
 
-        text = new Menu("Text");   // Menu (not MenuItem)
+        text = new Menu("Text");   
         paint = new MenuItem("Paint");
 
         paint.addActionListener(this);
 
-        // -------- Size Submenu --------
+    
         sz = new Menu("Size");
 
         sma = new MenuItem("Small");
@@ -66,25 +65,25 @@ class Frm20 extends Frame implements ActionListener {
         sz.add(med);
         sz.add(la);
 
-        text.add(sz);   // add size inside text
+        text.add(sz);   
 
         mo.add(text);
         mo.add(paint);
 
-        // -------- MenuBar --------
+    
         m = new MenuBar();
         setMenuBar(m);
         m.add(f);
         m.add(ex);
         m.add(mo);
 
-        // -------- Layout --------
+    
         setLayout(new BorderLayout());
 
-        // Default → Paint
+        
         add(pan, BorderLayout.CENTER);
 
-        // Window close
+        
         addWindowListener(new WindowAdapter() {
             public void windowClosing(WindowEvent e) {
                 System.exit(0);
@@ -98,7 +97,7 @@ class Frm20 extends Frame implements ActionListener {
     public void actionPerformed(ActionEvent e) {
         Object b = e.getSource();
 
-        // -------- TEXT MODE (Size selection) --------
+        
         if (b == sma || b == med || b == la) {
 
             remove(pan);
@@ -120,7 +119,7 @@ class Frm20 extends Frame implements ActionListener {
             repaint();
         }
 
-        // -------- PAINT MODE --------
+
         if (b == paint) {
             remove(t);
             add(pan, BorderLayout.CENTER);
@@ -129,20 +128,20 @@ class Frm20 extends Frame implements ActionListener {
             repaint();
         }
 
-        // -------- NEW --------
+    
         if (b == n) {
             t.setText("");
             pan.repaint();
         }
 
-        // -------- SAVE --------
+    
         if (b == s) {
             JOptionPane.showMessageDialog(null, "Saved Successfully");
             t.setText("");
             pan.repaint();
         }
 
-        // -------- EXIT --------
+        
         if (b == yes) {
             System.exit(0);
         }
